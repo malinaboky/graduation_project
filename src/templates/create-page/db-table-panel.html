@@ -1,0 +1,20 @@
+<table id="table-row" class="">
+    <tr>
+        {% for col in columns %}
+        <th>{{ col.name }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for col in columns %}
+        <td>{{ col.first_value }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for col in columns %}
+        <td class="type db-type">
+            <span>{{ col.type.value }}</span>
+            <input name="type" type="hidden" class="request" value="{{ col.type.name }}">
+        </td>
+        {% endfor %}
+    </tr>
+</table>

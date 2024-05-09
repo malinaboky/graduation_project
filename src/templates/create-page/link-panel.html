@@ -1,0 +1,22 @@
+<div id="link-pnl" hidden="true">
+    <h1>Добавьте ссылку на файл</h1>
+    <div id="type-link-pnl" class="form-block option-btn-group">
+        {% for link in links %}
+        <input type="button" class="default-btn default-btn--big" value="{{link.value.title}}"
+               onclick="switchToNextPage('#type-link-pnl', '#add-link');setHiddenValue('#link-type','{{link.name}}')">
+        {% endfor %}
+        <input name="link_type" type="hidden" id="link-type" value="">
+    </div>
+    <div id="add-link" class="form-block" hidden="true">
+        <h2>Вставьте ссылку</h2>
+        <input name="link" type="text" class="form-input" placeholder="Ссылка на файл">
+        <div id="link-validation-error-msg" class="error-msg" hidden="true">
+            <img src="/src/static/img/red-cross.svg" class="check-img">
+            <p></p>
+        </div>
+        <div class="back-block">
+            <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+                   onclick="setInvisible('#src-link .submit-btn');switchToNextPage('#add-link','#type-link-pnl');hideAndClean('#add-link')">
+        </div>
+    </div>
+</div>

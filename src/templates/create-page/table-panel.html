@@ -1,0 +1,29 @@
+<table id="table-row" class="">
+    <tr>
+        {% for item in parsed.title_row %}
+        <th>{{ item }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for item in parsed.example_row %}
+        <td>{{ item }}</td>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for x in range(parsed.example_row|length) %}
+        <td class="type">
+            <div class="default-dropdown dropdown dropdown-types {% if x==0 %} first {% elif x==parsed.example_row|length-1 %} last {% endif %} ">
+                <div class="select">
+                    <span>Строка</span>
+                </div>
+                <ul class="dropdown-menu">
+                    {% for y in types %}
+                    <li id="{{y.name}}">{{y.value}}</li>
+                    {% endfor %}
+                </ul>
+                <input name="type" type="hidden" class="request" value="str">
+            </div>
+        </td>
+        {% endfor %}
+    </tr>
+</table>

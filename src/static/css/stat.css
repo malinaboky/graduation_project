@@ -1,0 +1,432 @@
+body {
+    background: url('../img/shape-1.svg'),
+                url('../img/shape-2.svg'),
+                url('../img/shape-3.svg');
+    background-repeat: no-repeat;
+    background-position: left 0 top 0, left 25% bottom -100px, 100% 100%;
+    background-attachment: fixed;
+    background-size: 45%, 35%, 40%;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+.exit-btn {
+    width: 35px;
+    height: 35px;
+    background: white url('../img/exit.svg') no-repeat 9.5px center;
+    background-size: 55%;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    border-radius: 50%;
+}
+
+.stat-block {
+    width: 80%;
+    margin: 50px auto auto;
+}
+
+.version-block {
+    display: flex;
+    width: 20%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.version-block:last-child {
+    margin-bottom: 0;
+}
+
+.name-block {
+    font-size: 16px;
+    font-weight: 300;
+    color: #4F4F4F;
+}
+
+.name-block p {
+    margin: 0;
+}
+
+.status {
+    width: 15px;
+    height: 15px;
+}
+
+.done {
+    background: url('../img/ok.svg') no-repeat center;
+    background-size: 100%;
+}
+
+.process {
+    background: url('../img/grey-time.svg') no-repeat center;
+    background-size: 100%;
+}
+
+.default-btn--aqua {
+    margin-top: 25px;
+}
+
+.back-block {
+    margin-top: 10px;
+}
+
+.chart-btn-type-block {
+    display: flex;
+    width: 23%;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    justify-content: start;
+    align-items: center;
+}
+
+.chart-btn-type-block .default-btn {
+    width: 85%;
+    margin-left: 10px;
+}
+
+.chart-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.bar_chart {
+    background: white url('../img/bar-chart.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.pie_chart {
+    background: white url('../img/pie-chart.svg') no-repeat center;
+    background-size: 65%;
+}
+
+.line_chart {
+    background: white url('../img/line-chart.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.bubble_chart {
+    background: white url('../img/scatter-chart.svg') no-repeat center;
+    background-size: 60%;
+}
+
+.table-block {
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+table {
+    border-spacing: 0;
+    border-radius: 10px;
+}
+
+tr {
+    background-color: white;
+    color: #4F4F4F;
+}
+
+tr:first-child {
+    background-color: #805FDC;
+    color: white;
+}
+
+td, th {
+    min-width: 110px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #805FDC;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+th {
+    border-right-color: white;
+    border-left-color: white;
+    font-weight: 400;
+}
+
+th:first-child, td:first-child {
+    border-left-width: 2px;
+    border-left-color: #805FDC;
+}
+
+th:last-child, td:last-child {
+    border-right-width: 2px;
+    border-right-color: #805FDC;
+}
+
+th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+.chart-direct-type-block {
+    box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    padding: 12px 15px;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.direction-block-list {
+    margin-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: stretch;
+    justify-self: stretch;
+    align-items: center;
+}
+
+.direction-block .default-dropdown {
+    width: 80%;
+}
+
+.x-block {
+    justify-self: start;
+}
+
+.y-block {
+    justify-self: end;
+}
+
+.title-block {
+    display: flex;
+    align-items: center;
+}
+
+.title-block h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #4F4F4F;
+    margin: 0;
+}
+
+.x-icon {
+    width: 35px;
+    height: 35px;
+    background: url('../img/x-icon.svg') no-repeat center;
+    background-size: 80%;
+}
+
+.y-icon {
+    width: 35px;
+    height: 35px;
+    background: url('../img/y-icon.svg') no-repeat center;
+    background-size: 35%;
+}
+
+.line-block h2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.chart-version-block .version-block, .version-panel .version-block {
+    box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    cursor: pointer;
+    width: 15%;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    align-items: center;
+    justify-items: start;
+    text-align: start;
+    border-radius: 10px;
+    padding: 8px 0;
+    color: #4F4F4F;
+}
+
+.chart-version-block p, .version-panel p {
+    font-size: 14px;
+    justify-self: center;
+    font-weight: 300;
+    margin: 0 0 0 10px;
+}
+
+.version-panel .title p, .file-type-block .title p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.file-type-block .title p {
+    margin-left: 0;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+.file-type-block .dropdown {
+    width: 100%;
+}
+
+.version-panel .version-block {
+    background-color: #E8E8E8;
+    width: 90%;
+}
+
+.version-panel {
+    justify-self: start;
+}
+
+.radio-btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4F4F4F;
+    margin-left: 8px;
+}
+
+.selected.version-block {
+    background-color: #4092D1;
+    color: white;
+}
+
+.selected .radio-btn {
+    background-color: white;
+}
+
+.download-block {
+    box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.download-block h2 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.download-settings {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: start;
+}
+
+.file-type-block {
+    justify-self: end;
+}
+
+.version-block-list {
+    max-height: 200px;
+    width: 200px;
+    overflow-y: scroll;
+    padding-left: 5px;
+}
+
+.download-btn {
+    margin: 15px auto auto;
+}
+
+.chart-frame {
+    background-color: white;
+    border-radius: 10px;
+    padding: 12px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    max-height: 750px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.chart-settings {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: start;
+    margin-top: 10px;
+}
+
+.chart-settings .default-btn {
+    height: 30px;
+    width: 200px;
+    justify-self: center;
+}
+
+.amount-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-self: start;
+}
+
+.amount-block .error-msg {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.amount-block p {
+    font-weight: 300;
+    font-size: 14px;
+    color: #4F4F4F;
+    margin-top: 0;
+}
+
+.amount-block input {
+    background-color: #E8E8E8;
+    color: #4F4F4F;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 40%;
+}
+
+.create-delete-block {
+    justify-self: end;
+}
+
+.create-delete-block input {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: -1px 4px 4px 1px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.add-chart-btn {
+    background: #1AC185 url('../img/white-chart-plus.svg') no-repeat center;
+    background-size: 50%;
+}
+
+.delete-chart-btn {
+    background: #D00000 url('../img/white-bucket.svg') no-repeat center;
+    background-size: 50%;
+}

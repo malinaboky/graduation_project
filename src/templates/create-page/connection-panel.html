@@ -1,0 +1,89 @@
+<div id="postgres-set" hidden="true" class="form-block db-set">
+    <div class="add-line-block">
+        <h2>Введите название базы данных*</h2>
+        <input name="db_name" type="text" class="request form-input" placeholder="Введите название базы данных">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите хост*</h2>
+        <input name="host" type="text" class="request form-input" placeholder="Введите хост">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите порт*</h2>
+        <input name="port" type="number" class="request form-input" placeholder="Введите порт" min="0">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите название таблицы*</h2>
+        <input name="table" type="text" class="request form-input" placeholder="Введите название таблицы">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите схему</h2>
+        <input name="schema" type="text" class="request form-input" placeholder="Введите схему">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите имя пользователя</h2>
+        <input name="username" type="text" class="request form-input" placeholder="Введите имя пользователя">
+    </div>
+    <div class="add-line-block">
+        <div class="label-block">
+            <h2>Введите пароль</h2>
+            <input type="button" class="open-eye-btn close-eye-btn">
+        </div>
+        <input name="password" type="password" class="request form-input" placeholder="Введите пароль">
+    </div>
+    <p class="more-msg">Звездочкой (*) отмечены обязательные поля</p>
+    <div id="connect-postgres-error-msg" class="error-msg" hidden="true">
+        <p></p>
+    </div>
+    <input type="button" class="check-btn default-btn default-btn--big default-btn--aqua" value="Подключиться">
+    <div class="back-block">
+        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+               onclick="switchToNextPage('#postgres-set','#db-type-pnl');hideAndClean('#postgres-set')">
+    </div>
+</div>
+
+<div id="mongo-set" class="form-block db-set" hidden="true">
+        <div class="add-line-block">
+        <h2>Введите название базы данных*</h2>
+        <input name="db_name" type="text" class="request form-input" placeholder="Введите название базы данных">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите хост*</h2>
+        <input name="host" type="text" class="request form-input" placeholder="Введите хост">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите порт*</h2>
+        <input name="port" type="number" class="request form-input" placeholder="Введите порт" min="0">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите имя базы данных для аутентификации*</h2>
+        <input name="db_auth" type="text" class="request form-input" placeholder="Введите имя базы данных для аутентификации">
+    </div>
+    <div class="add-line-block">
+        <h2>Введите название коллекции*</h2>
+        <input name="table" type="text" class="request form-input" placeholder="Введите название таблицы">
+    </div>
+    <div id="add-key-block" class="add-line-block">
+        <h2>Добавьте ключи из коллекции, по которым будет осуществлена агрегация документов*</h2>
+    </div>
+    <input type="button" class="default-btn add-key-btn">
+    <div class="add-line-block">
+        <h2>Введите имя пользователя</h2>
+        <input name="username" type="text" class="request form-input" placeholder="Введите имя пользователя">
+    </div>
+    <div class="add-line-block">
+        <div class="label-block">
+            <h2>Введите пароль</h2>
+            <input type="button" class="open-eye-btn close-eye-btn">
+        </div>
+        <input name="password" type="password" class="request form-input" placeholder="Введите пароль">
+    </div>
+    <p class="more-msg">Звездочкой (*) отмечены обязательные поля</p>
+    <div id="connect-mongo-error-msg" class="error-msg" hidden="true">
+        <p></p>
+    </div>
+    <input type="button" class="check-btn default-btn default-btn--big default-btn--aqua" value="Подключиться">
+    <div class="back-block">
+        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+               onclick="switchToNextPage('#mongo-set','#db-type-pnl');hideAndClean('#mongo-set')">
+    </div>
+</div>

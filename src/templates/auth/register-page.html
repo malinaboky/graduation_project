@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/auth.css') }}">
+    <script defer src="{{ url_for('static', path='js/jquery-3.5.0.js') }}"></script>
+    <script defer src="{{ url_for('static', path='js/register-page.js') }}"></script>
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="form-container">
+    <form id="login">
+        <h1>Регистрация</h1>
+        <div class="form-block">
+            <label for="email">Почта</label>
+            <input name="email" type="email" id="email" class="form-input" required>
+        </div>
+        <div class="form-block">
+            <div class="label-block">
+                <label for="password">Пароль</label>
+                <input type="button" class="open-eye-btn close-eye-btn">
+            </div>
+            <input name="password" type="password" id="password" class="form-input" required>
+        </div>
+        <div id="validation-error-msg" class="error-msg" hidden="true">
+            <p>Эта почта уже занята</p>
+        </div>
+        <input type="submit" class="submit-btn default-btn default-btn--big default-btn--violet" value="Зарегистрироваться">
+    </form>
+</div>
+</body>
+{% endblock %}
+</html>

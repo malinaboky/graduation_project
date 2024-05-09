@@ -1,0 +1,51 @@
+<div id="row-pnl" class="form-block" hidden="true">
+    <h2>Установить в качестве заголовков</h2>
+    <div class="default-dropdown dropdown">
+        <div class="select">
+            <span>Автогенерация</span>
+        </div>
+        <ul class="dropdown-menu">
+          <li id="true" onclick="clickToAdd('', '#add-line')">Автогенерация</li>
+          <li id="false" onclick="clickToAdd('#add-line', '')">Первая строка</li>
+        </ul>
+        <input name="auto_title" type="hidden" class="request" value="">
+    </div>
+    <div id="add-line" class="add-line-block hidden" hidden="true">
+        <h2>Вставьте первую строку из файла для отображения заголовков</h2>
+        <input name="title" type="text" class="request form-input" placeholder="Вставьте строку">
+    </div>
+    <div id="add-auto" class="add-line-block">
+        <h2>Вставьте строку данных из файла для примера отображения в таблице</h2>
+        <input name="example" type="text" class="request form-input" placeholder="Вставьте строку">
+    </div>
+    <div id="list-warning" class="hidden" style="display: none;">
+        <div class="warning"></div>
+        <p>Убедитесь, что необходимые данные хранятся в первом листе вашего excel-файла</p>
+    </div>
+    <div id="set-sep" class="hidden" hidden="true">
+        <h2>Установить в качестве  разделителя</h2>
+        <div class="default-dropdown dropdown">
+            <div class="select">
+                <span>Автоопределение</span>
+            </div>
+            <ul class="dropdown-menu">
+                <li id="true" onclick="clickToAdd('','#add-sep')">Автоопределение</li>
+                <li id="false" onclick="clickToAdd('#add-sep', '')">Ввести свой разделитель</li>
+            </ul>
+            <input name="auto_sep" type="hidden" class="request" value="">
+        </div>
+        <div id="add-sep" class="add-line-block hidden" hidden="true">
+            <h2>Вставьте символ разделителя</h2>
+            <input name="sep" type="text" class="request form-input" placeholder="Вставьте символ">
+        </div>
+    </div>
+    <div id="validation-error-msg" class="error-msg" hidden="true">
+        <p></p>
+    </div>
+    <input type="button" class="default-btn default-btn--big default-btn--aqua" value="Далее"
+           onclick="checkRows()">
+    <div class="back-block">
+        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+               onclick="switchToNextPage('#row-pnl','#file-type-pnl');hideAndClean('#row-pnl')">
+    </div>
+</div>

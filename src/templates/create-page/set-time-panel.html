@@ -1,0 +1,30 @@
+<div class="set-time form-block">
+    <h1>Установите периодичность опроса источника</h1>
+    <div class="time-pnl">
+        <div class="time-input-block">
+            <h2>Установите единицу времени</h2>
+            <div class="default-dropdown dropdown">
+                <div class="select">
+                    <span>Выберите значение</span>
+                </div>
+                <ul class="dropdown-menu">
+                    {% for per in periods %}
+                    <li id="{{per.name}}" onclick="changeNumInput('{{per.value.min}}','{{per.value.max}}','{{show_id}}')">{{per.value.title}}</li>
+                    {% endfor %}
+                </ul>
+                <input name="period" type="hidden" class="request" value="">
+            </div>
+            <h2>Введите частоту обращения</h2>
+            <div class="num-input-block">
+                <input class="time-input" name="period_value" type="number" placeholder="Пример: 5">
+                <img src="/src/static/img/ok.svg" class="check-img ok" hidden="true">
+                <img src="/src/static/img/red-cross.svg" class="check-img not-ok">
+                <div class="time-error-msg error-msg" hidden="true">
+                    <img src="/src/static/img/red-cross.svg" class="check-img">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <img src="/src/static/img/time.svg" class="time-img">
+    </div>
+</div>

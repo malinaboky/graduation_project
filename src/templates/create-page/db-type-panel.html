@@ -1,0 +1,11 @@
+<div id="db-type-pnl" class="form-block option-btn-group" hidden="true">
+    <input type="button" class="default-btn default-btn--big" value="PostgreSQL"
+           onclick="setHiddenValue('#db-type', 'postgresql');switchToNextPage('#db-type-pnl','#postgres-set')">
+    <input type="button" class="default-btn default-btn--big" value="MongoDB"
+           onclick="setHiddenValue('#db-type','mongodb');switchToNextPage('#db-type-pnl','#mongo-set')">
+    <input type="hidden" id="db-type" name="db_type">
+    <div class="back-block">
+        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+               onclick="switchToNextPage('#db-type-pnl','#src-type-pnl');hideAndClean('#db-type-pnl')">
+    </div>
+</div>

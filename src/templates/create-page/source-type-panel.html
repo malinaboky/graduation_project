@@ -1,0 +1,9 @@
+<div id="src-type-pnl" class="form-block option-btn-group">
+    <input type="button" class="default-btn default-btn--big" value="Загрузить файл"
+           onclick="switchToNextPage('#src-type-pnl', '#file-type-pnl');setHiddenValue('#src-type','file')">
+    <input type="button" class="default-btn default-btn--big" value="Добавить ссылку на файл"
+           onclick="switchToNextPage('#src-type-pnl', '#file-type-pnl');setHiddenValue('#src-type','link')">
+    <input type="button" class="default-btn default-btn--big" value="Подключиться к базе данных"
+           onclick="switchToNextPage('#src-type-pnl', '#db-type-pnl');setHiddenValue('#src-type','database')">
+    <input type="hidden" id="src-type">
+</div>

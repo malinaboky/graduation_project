@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Конвейеры</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}">
+    <script defer src="{{ url_for('static', path='js/jquery-3.5.0.js') }}"></script>
+    <script defer src="{{ url_for('static', path='js/main-page.js') }}"></script>
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+{% block sidebar %}
+    {% with nickname=nickname %}
+        {% include 'main-page/sidebar.html' %}
+    {% endwith %}
+{% endblock %}
+
+<div id="pipeline-pnl">
+    <h1>Ваши конвейеры</h1>
+    <div class="pipeline-list">
+        {% for i in range(pipelines|length) %}
+        <div class="pipeline-block">
+            <div class="name-block">
+                <p>{{ pipelines[i].name }}</p>
+            </div>
+            <div class="btn-block" id="{{ pipelines[i].id }}">
+                <input type="button" class="pause-btn {% if pipelines[i].pause %}start{% endif %}">
+                <input type="button" class="edit-btn">
+                <input type="button" class="stat-btn">
+                <input type="button" class="delete-btn">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<input type="button" class="add-btn default-btn">
+</body>
+{% endblock %}
+</html>

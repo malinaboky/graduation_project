@@ -1,0 +1,73 @@
+body {
+    background: url('../img/shape-1.svg'),
+                url('../img/shape-2.svg'),
+                url('../img/shape-3.svg');
+    background-repeat: no-repeat;
+    background-position: left 0 top 0, left 25% bottom -100px, 100% 100%;
+    background-attachment: fixed;
+    background-size: 45%, 35%, 40%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+    width: 350px;
+    margin: 100px auto 100px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    padding: 30px 15px 10px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 0 20px;
+}
+
+.form-block {
+    width: 85%;
+    margin: auto auto 20px;
+    text-align: left;
+}
+
+.form-block:last-child {
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form-input {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    margin: auto auto 25px;
+}
+
+.error-msg {
+    width: 85%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+    margin: auto auto 20px;
+}
+
+.error-msg p {
+    margin: 0;
+}
+
+a {
+    font-size: 12px;
+    color: #4F4F4F;
+}

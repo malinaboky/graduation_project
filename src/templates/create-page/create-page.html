@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Создание конвейера</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/create.css') }}">
+    <script defer src="{{ url_for('static', path='js/jquery-3.5.0.js') }}"></script>
+    <script defer src="{{ url_for('static', path='js/create-page.js') }}"></script>
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+    <input type="button" class="default-btn exit-btn">
+    <form id="create-pipeline">
+        <div class="form-block">
+            <h1>Введите название конвейера</h1>
+            <input name="name" type="text" class="form-input" placeholder="Название" required>
+        </div>
+        <div id="set-src">
+            <h1>Выберите источник</h1>
+            {% include 'create-page/source-type-panel.html' %}
+            {% include 'create-page/file-type-panel.html' %}
+            {% include 'create-page/row-panel.html' %}
+            {% include 'create-page/db-type-panel.html' %}
+            {% include 'create-page/connection-panel.html' %}
+            <div id="table-pnl" hidden="true">
+                <div id="table-container"></div>
+                <div id="save-table-block" class="save-btn-group">
+                    <input type="button" class="default-btn default-btn--big default-btn--aqua" value="Сохранить" onclick="saveTable()">
+                    <br>
+                    <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад" onclick="switchToNextPage('#table-pnl','#row-pnl')">
+                </div>
+                <div id="change-table-block" class="change-btn-group" hidden="true">
+                    <input type="button" id="table-menu-btn" class="default-btn default-btn--little default-btn--grey" value="● ● ●"
+                           onclick="switchVisible('#table-menu-btn', '#open-table-menu-block')">
+                    <div id="open-table-menu-block" hidden="true">
+                        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Изменить источник"
+                               onclick="editSource()">
+                        <input type="button" class="default-btn cancel-btn default-btn--grey"
+                               onclick="switchVisible('#open-table-menu-block', '#table-menu-btn')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="set-job form-block" hidden="true">
+            <h1>Определите обработку данных</h1>
+            <div class="job-group"></div>
+            <input type="button" class="add-job-btn default-btn default-btn--big default-btn--blue" value="Добавить" >
+            <div class="field-dropdown" hidden="true">
+                <div class="dropdown">
+                    <ul class="dropdown-menu"></ul>
+                </div>
+                <input type="button" class="default-btn default-little-btn cancel-btn">
+            </div>
+        </div>
+        <div id="src-file" class="src-setting" hidden="true">
+            {% include 'create-page/add-file-panel.html' %}
+            <input type="submit" class="submit-btn default-btn default-btn--big default-btn--aqua"
+                   value="Создать конвейер" style="display: none;">
+            <div class="create-error-msg error-msg" hidden="true">
+                <p></p>
+            </div>
+        </div>
+        <div id="src-link" class="src-setting" hidden="true">
+            {% with periods=periods, show_id="#link-pnl" %}
+                {% include 'create-page/set-time-panel.html' %}
+            {% endwith %}
+            {% with links=links %}
+                {% include 'create-page/link-panel.html' %}
+            {% endwith %}
+            <input type="submit" class="submit-btn default-btn default-btn--big default-btn--aqua"
+                   value="Создать конвейер" style="display: none;">
+            <div class="create-error-msg error-msg" hidden="true">
+                <p></p>
+            </div>
+        </div>
+        <div id="src-database" class="src-setting" hidden="true">
+            {% with periods=periods, show_id="#src-database .submit-btn" %}
+                {% include 'create-page/set-time-panel.html' %}
+            {% endwith %}
+            {% include 'create-page/load_schema_panel.html' %}
+            <input type="submit" class="submit-btn default-btn default-btn--big default-btn--aqua"
+                   value="Создать конвейер" style="display: none;">
+            <div class="create-error-msg error-msg" hidden="true">
+                <p></p>
+            </div>
+        </div>
+    </form>
+</body>
+{% endblock %}
+
+</html>

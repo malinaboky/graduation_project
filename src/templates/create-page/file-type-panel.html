@@ -1,0 +1,11 @@
+<div id="file-type-pnl" class="form-block option-btn-group" hidden="true">
+    <input type="button" class="default-btn default-btn--big" value="csv"
+           onclick="switchToNextPage('#file-type-pnl','#row-pnl');setVisible('#set-sep')">
+    <input type="button" class="default-btn default-btn--big" value="excel"
+           onclick="switchToNextPage('#file-type-pnl','#row-pnl');setVisible('#list-warning')">
+    <div class="back-block">
+        <input type="button" class="default-btn default-btn--little default-btn--grey" value="Назад"
+               onclick="switchToNextPage('#file-type-pnl','#src-type-pnl');hideAndClean('#file-type-pnl')">
+    </div>
+    <input name="file_type" type="hidden" value="">
+</div>

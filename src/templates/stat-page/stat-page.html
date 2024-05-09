@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/stat.css') }}">
+    <script defer src="{{ url_for('static', path='js/jquery-3.5.0.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+    <script defer src="{{ url_for('static', path='js/stat-page.js') }}"></script>
+</head>
+{% endblock %}
+
+{% block content %}
+<body>
+<input type="button" class="default-btn exit-btn">
+<div class="stat-block">
+    <h1>Готовность</h1>
+    {% for v in versions %}
+        <div class="version-block">
+            <div class="name-block">
+                <p>{{ v.name }}</p>
+            </div>
+            <div class="status {% if v.is_done %} done {% else %} process {% endif %}">
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="stat-block">
+    <h1>Выгрузка данных</h1>
+    <div class="download-block">
+        <h2>Выгрузка данных в виде файла</h2>
+        <div class="download-settings">
+            <div class="version-panel">
+                <div class="title">
+                    <p>Выберите версии данных</p>
+                </div>
+                <div class="version-block-list">
+                    {% for v in versions %}
+                    <div id="{{v.id}}" class="version-block">
+                        <div class="radio-btn"></div>
+                        <p>{{v.name}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="file-type-block">
+                <div class="title">
+                    <p>Выберите формат файла</p>
+                </div>
+                <div class="default-dropdown dropdown">
+                    <div class="select">
+                        <span>csv</span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li id="csv">csv</li>
+                        <li id="excel">excel</li>
+                    </ul>
+                    <input name="file_type" type="hidden" value="csv">
+                </div>
+            </div>
+        </div>
+        <input type="button" class="default-btn default-btn--big default-btn--aqua download-btn" value="Скачать">
+    </div>
+</div>
+<div class="stat-block">
+    <h1>Статистика</h1>
+    <div id="chart-list">
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>
